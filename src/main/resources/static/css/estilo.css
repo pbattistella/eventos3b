@@ -1,0 +1,57 @@
+body{
+    margin: 0;
+    font-family: monospace;
+}
+
+header{
+    background-color: chocolate;
+    padding: 20px;
+}
+
+header > h2{
+    color: #fff;
+}
+
+.container{
+    margin: auto;
+    margin-top: 32px;
+    margin-bottom: 32px;
+    width: 60%;
+}
+
+.container > img{
+    width: 100%;
+}
+
+footer{
+    display: flex;
+    background-color: chocolate;
+    color: #fff;
+    padding: 16px;
+}
+
+.a-edit{
+    color: forestgreen;
+}
+
+.a-delete{
+    color: crimson;
+}
+
+.a-edit:hover{
+    font-weight: bold;
+    color: darkgreen;
+}
+
+.a-delete:hover{
+    font-weight: bold;
+    color: darkred;
+}
+
+@media screen and (max-width:500px){
+    footer{
+        display: block;
+        
+    }
+}
+
