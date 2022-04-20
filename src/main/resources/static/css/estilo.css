@@ -48,10 +48,24 @@ footer{
     color: darkred;
 }
 
-@media screen and (max-width:500px){
+.a-add{
+    color: #fff;
+    text-decoration: none;
+}
+
+.a-add:hover{
+    color: cornsilk;
+    font-weight: bold;
+}
+
+@media screen and (max-width:650px){
     footer{
         display: block;
         
+    }
+
+    .container{
+        width: 100%;
     }
 }
 
