@@ -12,9 +12,15 @@ import java.util.List;
 public class ClienteServiceImpl implements ClienteService{
 
     @Autowired
-    private ClienteRepository clienteRepository;
+    ClienteRepository clienteRepository;
 
-    public List<Cliente> findAll(){
+    @Override
+    public List<Cliente> findAll() {
         return clienteRepository.findAll(Sort.by("nome"));
+    }
+
+    @Override
+    public Cliente findByNome(String nome) {
+        return clienteRepository.findByNome(nome);
     }
 }

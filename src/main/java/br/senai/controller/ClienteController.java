@@ -8,14 +8,13 @@ import org.springframework.web.bind.annotation.GetMapping;
 
 @Controller
 public class ClienteController {
-
     @Autowired
     ClienteServiceImpl clienteService;
 
     @GetMapping("/cliente/list")
     public String findAll(Model model){
-        System.out.println(clienteService.findAll());
-
+        model.addAttribute("clientes", clienteService.findAll());
         return "cliente/list";
+
     }
 }

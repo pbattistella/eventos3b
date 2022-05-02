@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-br" xmlns:th="http://www.thymeleaf.org">
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -50,23 +50,14 @@
         </tr>
         </thead>
         <tbody>
-        <tr>
-          <th scope="row">1</th>
-          <td>Mark</td>
-          <td>mark@gmail</td>
-          <td>456.788.99</td>
+        <tr th:each="cliente : ${clientes}">
+          <th scope="row" th:text="${cliente.id}"></th>
+          <td th:text="${cliente.nome}"></td>
+          <td th:text="${cliente.email}"></td>
+          <td th:text="${cliente.cpf}"></td>
           <td><a class="a-edit" href="./edit/1"><i class="far fa-edit"></i></a></td>
           <td><a class="a-delete" href="./delete/1"><i class="fa fa-trash"></i></a></td>
         </tr>
-        <tr>
-          <th scope="row">2</th>
-          <td>Jacob</td>
-          <td>jacob@gmail</td>
-          <td>444.23.445</td>
-          <td><a class="a-edit" href="./edit/2"><i class="far fa-edit"></i></a></td>
-          <td><a class="a-delete" href="./delete/2"><i class="fa fa-trash"></i></a></td>
-        </tr>
-
         </tbody>
       </table>
     </div>

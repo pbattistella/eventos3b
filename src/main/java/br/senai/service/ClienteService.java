@@ -7,4 +7,5 @@ import java.util.List;
 public interface ClienteService {
 
     public List<Cliente> findAll();
+    public Cliente findByNome(String nome);
 }
