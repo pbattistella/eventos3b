@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="pt-br" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="../fontawesome-5.15.3/css/all.css">
+  <link rel="stylesheet" href="../bootstrap-5.0.0/css/bootstrap.min.css">
+  <link rel="stylesheet" href="../css/estilo.css">
+  <title>NewEvent</title>
+</head>
+
+<body>
+  <header>
+    <h2>NewEvent</h2>
+  </header>
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="/">Eventos</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link" aria-current="page" href="/">Eventos</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" href="/cliente/list">Cliente</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/sobre">Sobre</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <div class="container">
+    <div class="div-title">
+      <h4>Cliente</h4>
+    </div>
+
+    <div th:if="${isSave}" class="alert alert-success">
+      <h4>Operação realizada com Sucesso!</h4>
+    </div>
+
+    <div th:if="${isError}" class="alert alert-danger">
+      <h4>Ocorreu um erro ao salvar!</h4>
+    </div>
+
+    <form th:action="@{/cliente/save}"
+      method="post"
+      th:object="${cliente}">
+      <div class="form-floating mb-3">
+        <input type="number" th:field="*{id}" class="form-control" id="floatingInputId" placeholder="código" readonly>
+        <label for="floatingInputId">Código</label>
+      </div>
+      <div class="form-floating mb-3">
+        <input type="text" th:field="*{nome}" required class="form-control" id="floatingInputNome" placeholder="Nome">
+        <label for="floatingInputNome">Nome</label>
+      </div>
+      <div class="form-floating mb-3">
+        <input type="email" th:field="*{email}" required class="form-control" id="floatingInputEmail" placeholder="E-mail">
+        <label for="floatingInputEmail">E-mail</label>
+      </div>
+      <div class="form-floating mb-3">
+        <input type="text" th:field="*{cpf}" required class="form-control" id="floatingInputCpf" placeholder="CPF">
+        <label for="floatingInputEmail">CPF</label>
+      </div>
+      <div class="form-floating mb-3">
+        <button type="submit" class="btn btn-success">Salvar</button>
+        <button type="button" class="btn btn-light"
+          onclick="window.location.href='./list'">Cancelar
+        </button>
+      </div>
+    </form>
+  </div>
+
+  <script src="../js/jquery-3.6.0.min.js"></script>
+  <script src="../js/popper.min.js"></script>
+  <script src="../bootstrap-5.0.0/js/bootstrap.min.js"></script>
+
+</body>
+
+</html>

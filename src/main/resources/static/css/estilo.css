@@ -58,6 +58,21 @@ footer{
     font-weight: bold;
 }
 
+.div-title{
+    margin-bottom: 16px;
+    padding: 24px;
+    background-color: black;
+    color: #fff;
+    border-radius: 25px;
+}
+
+form{
+    margin-top: 30px;
+    padding: 8px;
+    border: 2px solid chocolate;
+    border-radius: 15px;
+}
+
 @media screen and (max-width:650px){
     footer{
         display: block;
