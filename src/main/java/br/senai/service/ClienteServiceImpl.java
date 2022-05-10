@@ -7,6 +7,7 @@ import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class ClienteServiceImpl implements ClienteService{
@@ -17,6 +18,17 @@ public class ClienteServiceImpl implements ClienteService{
     @Override
     public List<Cliente> findAll() {
         return clienteRepository.findAll(Sort.by("nome"));
+    }
+
+    @Override
+    public Cliente findById(Long id){
+        Optional listCliente = clienteRepository.findById(id);
+        if (!listCliente.isEmpty()){
+            return (Cliente) listCliente.get();
+        } else {
+            return  new Cliente();
+        }
+
     }
 
     @Override
