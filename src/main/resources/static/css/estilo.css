@@ -84,3 +84,7 @@ form{
     }
 }
 
+.modal-header{
+    background-color: red;
+    color: #fff;
+}

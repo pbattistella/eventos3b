@@ -32,7 +32,8 @@ public class ClienteServiceImpl implements ClienteService{
     }
 
     @Override
-    public Cliente findByNome(String nome) {
+    public Cliente findByNome
+            (String nome) {
         return clienteRepository.findByNome(nome);
     }
 
@@ -41,6 +42,15 @@ public class ClienteServiceImpl implements ClienteService{
         try {
             return clienteRepository.save(cliente);
         } catch (Exception e){
+            throw e;
+        }
+    }
+
+    @Override
+    public void deleteById(Long id){
+        try {
+            clienteRepository.deleteById(id);
+        }catch (Exception e){
             throw e;
         }
     }

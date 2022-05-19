@@ -56,16 +56,35 @@
           <td th:text="${cliente.email}"></td>
           <td th:text="${cliente.cpf}"></td>
           <td><a class="a-edit" th:href="@{'./edit/' + ${cliente.id}}"><i class="far fa-edit"></i></a></td>
-          <td><a class="a-delete" href="./delete/1"><i class="fa fa-trash"></i></a></td>
+          <td><a class="a-delete" th:onclick="|showModalDeletar('cliente', ${cliente.id})|"><i class="fa fa-trash"></i></a></td>
         </tr>
         </tbody>
       </table>
     </div>
-
+    <!--MODAL PARA DELETAR-->
+    <div class="modal" tabindex="-1" id="modalDeletar">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title">Atenção</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <p>Você realmente deseja deletar o registro?</p>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-danger" th:onclick="deletar()">Deletar</button>
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    
     
     <script src="../js/jquery-3.6.0.min.js"></script>
     <script src="../js/popper.min.js"></script>
     <script src="../bootstrap-5.0.0/js/bootstrap.min.js"></script>
+    <script src="../js/script.js"></script>
     
 </body>
 </html>

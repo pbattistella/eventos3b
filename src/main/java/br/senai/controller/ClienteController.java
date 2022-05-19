@@ -47,4 +47,14 @@ public class ClienteController {
             return "cliente/add";
         }
     }
+
+    @GetMapping("/cliente/delete/{id}")
+    public String delete(@PathVariable long id){
+        try{
+            clienteService.deleteById(id);
+        } catch (Exception e) {
+            System.out.println("Erro: " + e.getMessage());
+        }
+        return "redirect:/cliente/list";
+    }
 }
