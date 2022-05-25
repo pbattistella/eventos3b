@@ -15,17 +15,17 @@
     </header>
       <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
         <div class="container-fluid">
-          <a class="navbar-brand" href="/">Eventos</a>
+          <a class="navbar-brand" href="/evento/list">Eventos</a>
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
           </button>
           <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
               <li class="nav-item">
-                <a class="nav-link" aria-current="page" href="/evento/list">Eventos</a>
+                <a class="nav-link active" aria-current="page" href="/">Eventos</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link active" href="/cliente/list">Cliente</a>
+                <a class="nav-link " href="/cliente/list">Cliente</a>
               </li>
               <li class="nav-item">
                 <a class="nav-link" href="/sobre">Sobre</a>
@@ -42,21 +42,23 @@
         <tr>
           <th scope="col">#</th>
           <th scope="col">Nome</th>
-          <th scope="col">E-mail</th>
-          <th scope="col">CPF</th>
+          <th scope="col">Hora</th>
+          <th scope="col">Data</th>
+          <th scope="col">Preço</th>
           <th scope="col" colspan="2">
             <a class="a-add" href="./add"><i class="fa fa-plus"></i> Novo</a>
           </th>
         </tr>
         </thead>
         <tbody>
-        <tr th:each="cliente : ${clientes}">
-          <th scope="row" th:text="${cliente.id}"></th>
-          <td th:text="${cliente.nome}"></td>
-          <td th:text="${cliente.email}"></td>
-          <td th:text="${cliente.cpf}"></td>
-          <td><a class="a-edit" th:href="@{'./edit/' + ${cliente.id}}"><i class="far fa-edit"></i></a></td>
-          <td><a class="a-delete" th:onclick="|showModalDeletar('cliente', ${cliente.id})|"><i class="fa fa-trash"></i></a></td>
+        <tr th:each="evento : ${eventos}">
+          <th scope="row" th:text="${evento.id}"></th>
+          <td th:text="${evento.nome}"></td>
+          <td th:text="${evento.hora}"></td>
+          <td th:text="${evento.data}"></td>
+          <td th:text="${evento.preco}"></td>
+          <td><a class="a-edit" th:href="@{'./edit/' + ${evento.id}}"><i class="far fa-edit"></i></a></td>
+          <td><a class="a-delete" th:onclick="|showModalDeletar('evento', ${evento.id})|"><i class="fa fa-trash"></i></a></td>
         </tr>
         </tbody>
       </table>
