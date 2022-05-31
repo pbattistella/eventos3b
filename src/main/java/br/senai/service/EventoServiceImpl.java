@@ -20,6 +20,10 @@ public class EventoServiceImpl implements EventoService{
 
     @Override
     public Evento save(Evento evento) {
-        return null;
+        try{
+            return eventoRepository.save(evento);
+        }catch (Exception e){
+            throw (e);
+        }
     }
 }

@@ -20,7 +20,8 @@ public class Evento {
     private String nome;
 
     @NotNull
-    private Time hora;
+    @Size(max=5)
+    private String hora;
 
     @NotNull
     private Date data;
@@ -44,10 +45,10 @@ public class Evento {
     public void setNome(String nome) {
         this.nome = nome;
     }
-    public Time getHora() {
+    public String getHora() {
         return hora;
     }
-    public void setHora(Time hora) {
+    public void setHora(String hora) {
         this.hora = hora;
     }
     public Date getData() {
