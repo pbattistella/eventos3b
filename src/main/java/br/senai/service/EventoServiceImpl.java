@@ -19,6 +19,16 @@ public class EventoServiceImpl implements EventoService{
     }
 
     @Override
+    public Evento findById(Long id){
+        Evento findEvento = eventoRepository.findById(id).get();
+        if (findEvento != null){
+            return findEvento;
+        } else {
+            return new Evento();
+        }
+    }
+
+    @Override
     public Evento save(Evento evento) {
         try{
             return eventoRepository.save(evento);

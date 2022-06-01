@@ -5,9 +5,9 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="../fontawesome-5.15.3/css/all.css">
-  <link rel="stylesheet" href="../bootstrap-5.0.0/css/bootstrap.min.css">
-  <link rel="stylesheet" href="../css/estilo.css">
+  <link rel="stylesheet" href="../../fontawesome-5.15.3/css/all.css">
+  <link rel="stylesheet" href="../../bootstrap-5.0.0/css/bootstrap.min.css">
+  <link rel="stylesheet" href="../../css/estilo.css">
   <title>NewEvent</title>
 </head>
 
@@ -55,34 +55,34 @@
       method="post"
       th:object="${evento}">
       <div class="form-floating mb-3">
-        <input type="number" th:field="*{id}" class="form-control" id="floatingInputId" placeholder="código" readonly>
+        <input type="number" th:field="${evento.id}" class="form-control" id="floatingInputId" placeholder="código" readonly>
         <label for="floatingInputId">Código</label>
       </div>
       <div class="form-floating mb-3">
-        <input type="text" th:field="*{nome}" required class="form-control" id="floatingInputNome" placeholder="Nome">
+        <input type="text" th:field="${evento.nome}" required class="form-control" id="floatingInputNome" placeholder="Nome">
         <label for="floatingInputNome">Nome</label>
       </div>
       <div class="form-floating mb-3">
-        <input type="time" th:field="*{hora}" required class="form-control" id="floatingInputHora" placeholder="Hora">
+        <input type="time" th:field="${evento.hora}" required class="form-control" id="floatingInputHora" placeholder="Hora">
         <label for="floatingInputHora">Hora</label>
       </div>
       <div class="form-floating mb-3">
-        <input type="date" th:field="*{data}" required class="form-control" id="floatingInputData" placeholder="Data">
+        <input type="date" th:field="${evento.data}" required class="form-control" id="floatingInputData" placeholder="Data">
         <label for="floatingInputData">Data</label>
       </div>
       <div class="form-floating mb-3">
-        <input type="text" th:field="*{local}" required class="form-control" id="floatingInputLocal" placeholder="Local">
+        <input type="text" th:field="${evento.local}" required class="form-control" id="floatingInputLocal" placeholder="Local">
         <label for="floatingInputLocal">Local</label>
       </div>
       <div class="form-floating mb-3">
-        <input type="number" th:field="*{preco}" required class="form-control" id="floatingInputPreco" placeholder="Preço">
+        <input type="number" th:field="${evento.preco}" required class="form-control" id="floatingInputPreco" placeholder="Preço">
         <label for="floatingInputPreco">Preço</label>
       </div>
 
       <label for="floatingInputClientes">Clientes disponíveis</label>
         <select class="form-select" aria-label="Clientes disponíveis"
                 id="floatingInputClientes"
-                th:field="*{clientes}"
+                th:field="${evento.clientes}"
                 multiple
                 size="10"
         >
@@ -96,15 +96,15 @@
       <div class="form-floating mb-3">
         <button type="submit" class="btn btn-success">Salvar</button>
         <button type="button" class="btn btn-light"
-          onclick="window.location.href='./list'">Cancelar
+          onclick="window.location.href='../list'">Cancelar
         </button>
       </div>
     </form>
   </div>
 
-  <script src="../js/jquery-3.6.0.min.js"></script>
-  <script src="../js/popper.min.js"></script>
-  <script src="../bootstrap-5.0.0/js/bootstrap.min.js"></script>
+  <script src="../../js/jquery-3.6.0.min.js"></script>
+  <script src="../../js/popper.min.js"></script>
+  <script src="../../bootstrap-5.0.0/js/bootstrap.min.js"></script>
 
 </body>
 
