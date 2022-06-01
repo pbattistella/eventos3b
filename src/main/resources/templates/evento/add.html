@@ -78,6 +78,23 @@
         <input type="number" th:field="*{preco}" required class="form-control" id="floatingInputPreco" placeholder="Preço">
         <label for="floatingInputPreco">Preço</label>
       </div>
+
+<!--      <div class="form-floating mb-3 ">-->
+      <label for="floatingInputClientes">Clientes disponíveis</label>
+        <select class="form-select" aria-label="Clientes disponíveis"
+                id="floatingInputClientes"
+                th:field="*{clientes}"
+                multiple
+                size="10"
+        >
+          <option th:each="cl : ${clientes}"
+                  th:text="${cl.nome}"
+                  th:value="${cl.id}"
+          >
+          </option>
+        </select>
+
+<!--      </div>-->
       <div class="form-floating mb-3">
         <button type="submit" class="btn btn-success">Salvar</button>
         <button type="button" class="btn btn-light"

@@ -3,6 +3,7 @@ package br.senai.model;
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
+import java.util.List;
 
 @Entity(name = "cliente")
 public class Cliente {
@@ -20,6 +21,9 @@ public class Cliente {
 
     @Size(max=25)
     private String cpf;
+
+    @ManyToMany(mappedBy = "clientes")
+    private List<Evento> eventos;
 
     public Long getId() {
         return id;
@@ -45,6 +49,13 @@ public class Cliente {
     public void setCpf(String cpf) {
         this.cpf = cpf;
     }
+    public List<Evento> getEventos() {
+        return eventos;
+    }
+    public void setEventos(List<Evento> eventos) {
+        this.eventos = eventos;
+    }
+
     @Override
     public String toString() {
         return "Cliente{" +
