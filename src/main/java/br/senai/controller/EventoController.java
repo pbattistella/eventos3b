@@ -41,7 +41,6 @@ public class EventoController {
     @PostMapping("/evento/save")
     public String save(Evento evento, Model model){
         try{
-            System.out.println("Evento" + evento);
             Evento newEvento = eventoService.save(evento);
             model.addAttribute("evento", newEvento);
             model.addAttribute("isSave", true);
@@ -56,4 +55,16 @@ public class EventoController {
             return "/evento/add";
         }
     }
+
+
+    @GetMapping("/evento/delete/{id}")
+    public String delete(@PathVariable long id){
+        try{
+            eventoService.deleteById(id);
+        }catch (Exception e){
+            System.out.println("Erro ao deletar" + e.getMessage());
+        }
+        return "redierct:/evento/list";
+    }
+
 }

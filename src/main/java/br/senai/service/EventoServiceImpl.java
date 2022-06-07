@@ -36,4 +36,13 @@ public class EventoServiceImpl implements EventoService{
             throw (e);
         }
     }
+
+    @Override
+    public void deleteById(Long id){
+        try{
+            eventoRepository.deleteById(id);
+        }catch (Exception e){
+            throw  e;
+        }
+    }
 }
